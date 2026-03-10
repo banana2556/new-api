@@ -360,7 +360,9 @@ code {
   line-height: 1;
   background-color: var(--semi-color-fill-0);
   color: var(--semi-color-text-2);
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
 }
 
 .sbg-badge-active {
@@ -970,4 +972,455 @@ html.dark .with-pastel-balls::before {
 .semi-button,
 .semi-datepicker-range-input {
   border-radius: 10px !important;
+}
+
+/* ==================== Homepage Claude Glass ==================== */
+.home-claude-shell {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(
+      75% 75% at 12% 8%,
+      rgba(255, 244, 231, 0.92) 0%,
+      transparent 62%
+    ),
+    radial-gradient(
+      70% 80% at 88% 18%,
+      rgba(243, 231, 220, 0.7) 0%,
+      transparent 64%
+    ),
+    linear-gradient(180deg, #f7f0e8 0%, #f1e7dc 45%, #efe7de 100%);
+}
+
+.home-claude-shell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+      125deg,
+      rgba(255, 255, 255, 0.58) 0%,
+      rgba(255, 255, 255, 0.18) 38%,
+      rgba(255, 255, 255, 0) 62%
+    ),
+    radial-gradient(
+      50% 35% at 50% 100%,
+      rgba(190, 145, 116, 0.12) 0%,
+      transparent 100%
+    );
+}
+
+.home-claude-hero {
+  position: relative;
+  min-height: calc(100vh - 64px);
+  padding: clamp(2rem, 4vw, 4rem) 1rem 3rem;
+}
+
+.home-claude-atmosphere {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.home-claude-atmosphere::before,
+.home-claude-atmosphere::after {
+  content: '';
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(90px);
+  opacity: 0.65;
+}
+
+.home-claude-atmosphere::before {
+  width: 320px;
+  height: 320px;
+  top: 4rem;
+  left: -3rem;
+  background: rgba(242, 196, 165, 0.42);
+}
+
+.home-claude-atmosphere::after {
+  width: 380px;
+  height: 380px;
+  right: -4rem;
+  bottom: 1rem;
+  background: rgba(220, 185, 150, 0.24);
+}
+
+.home-claude-stage {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 980px);
+  margin: 0 auto;
+  min-height: calc(100vh - 64px - 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-claude-island {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 680px);
+  margin-bottom: -7.5rem;
+  padding: clamp(1.75rem, 4vw, 3rem);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 2rem;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 250, 245, 0.42) 100%
+  );
+  box-shadow:
+    0 30px 80px rgba(109, 78, 54, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  text-align: center;
+  backdrop-filter: blur(24px) saturate(135%);
+  -webkit-backdrop-filter: blur(24px) saturate(135%);
+}
+
+.home-claude-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 0.875rem;
+  border-radius: 999px;
+  border: 1px solid rgba(156, 119, 94, 0.18);
+  background: rgba(255, 255, 255, 0.48);
+  color: #7d5b47;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-claude-title {
+  margin-top: 1rem;
+  color: #2b2018;
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+}
+
+.home-claude-subtitle {
+  width: min(100%, 32rem);
+  margin: 1rem auto 0;
+  color: #655246;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.75;
+}
+
+.home-claude-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.875rem;
+  margin-top: 1.75rem;
+}
+
+.home-claude-action-link {
+  display: flex;
+}
+
+.home-claude-btn-primary.semi-button,
+.home-claude-btn-secondary.semi-button {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    opacity 180ms ease;
+}
+
+.home-claude-btn-primary.semi-button {
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  background: linear-gradient(135deg, #c97a55 0%, #b66443 100%);
+  box-shadow:
+    0 18px 36px rgba(171, 92, 56, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.home-claude-btn-primary.semi-button:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #c06f4a 0%, #aa5b3a 100%);
+  box-shadow:
+    0 20px 40px rgba(161, 86, 53, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.home-claude-btn-secondary.semi-button {
+  color: #3d2c21;
+  border: 1px solid rgba(121, 94, 77, 0.16);
+  background: linear-gradient(
+    140deg,
+    rgba(255, 255, 255, 0.72) 0%,
+    rgba(255, 251, 247, 0.46) 100%
+  );
+  box-shadow:
+    0 12px 28px rgba(109, 78, 54, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.56);
+}
+
+.home-claude-btn-secondary.semi-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(121, 94, 77, 0.24);
+  background: linear-gradient(
+    140deg,
+    rgba(255, 255, 255, 0.82) 0%,
+    rgba(255, 252, 248, 0.56) 100%
+  );
+  box-shadow:
+    0 14px 30px rgba(109, 78, 54, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.home-claude-cat-wrap {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 820px);
+}
+
+.home-claude-cat-image,
+.home-claude-cat-placeholder {
+  width: 100%;
+  aspect-ratio: 8 / 5.4;
+  display: block;
+}
+
+.home-claude-cat-image {
+  object-fit: contain;
+  object-position: center center;
+}
+
+.home-claude-cat-placeholder {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 2.5rem;
+  border-radius: 2.5rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+}
+
+.home-claude-cat-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 8% 12% 0;
+  border-radius: 999px;
+  background: radial-gradient(
+      70% 60% at 50% 55%,
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    linear-gradient(180deg, rgba(190, 149, 118, 0.12) 0%, transparent 100%);
+  filter: blur(18px);
+}
+
+.home-claude-cat-silhouette {
+  position: absolute;
+  inset: auto 14% 0;
+  height: 82%;
+  border-radius: 45% 45% 28% 28% / 46% 46% 24% 24%;
+  background: linear-gradient(180deg, #e9d5c4 0%, #d9bca5 50%, #c8a387 100%);
+  box-shadow:
+    0 34px 70px rgba(125, 88, 65, 0.2),
+    inset 0 14px 28px rgba(255, 255, 255, 0.28);
+}
+
+.home-claude-cat-silhouette::before,
+.home-claude-cat-silhouette::after {
+  content: '';
+  position: absolute;
+  top: -7%;
+  width: 24%;
+  height: 24%;
+  background: linear-gradient(180deg, #e9d5c4 0%, #d5b398 100%);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  box-shadow: inset 0 6px 10px rgba(255, 255, 255, 0.2);
+}
+
+.home-claude-cat-silhouette::before {
+  left: 14%;
+  transform: rotate(-8deg);
+}
+
+.home-claude-cat-silhouette::after {
+  right: 14%;
+  transform: rotate(8deg);
+}
+
+.home-claude-cat-label {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 0.875rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.56);
+  color: #795645;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 30px rgba(109, 78, 54, 0.12);
+}
+
+html.dark .home-claude-shell {
+  background: radial-gradient(
+      80% 80% at 12% 8%,
+      rgba(146, 103, 77, 0.24) 0%,
+      transparent 62%
+    ),
+    radial-gradient(
+      70% 70% at 88% 18%,
+      rgba(118, 90, 72, 0.18) 0%,
+      transparent 64%
+    ),
+    linear-gradient(180deg, #16110e 0%, #1c1511 45%, #18120f 100%);
+}
+
+html.dark .home-claude-shell::before {
+  background: linear-gradient(
+      125deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.02) 38%,
+      rgba(255, 255, 255, 0) 62%
+    ),
+    radial-gradient(
+      50% 35% at 50% 100%,
+      rgba(184, 120, 86, 0.14) 0%,
+      transparent 100%
+    );
+}
+
+html.dark .home-claude-atmosphere::before {
+  background: rgba(164, 111, 78, 0.26);
+}
+
+html.dark .home-claude-atmosphere::after {
+  background: rgba(126, 94, 73, 0.22);
+}
+
+html.dark .home-claude-island {
+  border-color: rgba(255, 235, 218, 0.12);
+  background: linear-gradient(
+    145deg,
+    rgba(44, 31, 24, 0.72) 0%,
+    rgba(28, 21, 17, 0.58) 100%
+  );
+  box-shadow:
+    0 32px 90px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+html.dark .home-claude-eyebrow {
+  border-color: rgba(235, 207, 183, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: #e6cab4;
+}
+
+html.dark .home-claude-title {
+  color: #f3e6d7;
+}
+
+html.dark .home-claude-subtitle {
+  color: #c9b3a1;
+}
+
+html.dark .home-claude-btn-primary.semi-button {
+  border-color: rgba(255, 214, 187, 0.14);
+  box-shadow:
+    0 20px 40px rgba(163, 86, 53, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+html.dark .home-claude-btn-secondary.semi-button {
+  color: #f3e6d7;
+  border-color: rgba(255, 223, 201, 0.12);
+  background: linear-gradient(
+    140deg,
+    rgba(56, 41, 33, 0.66) 0%,
+    rgba(34, 26, 22, 0.52) 100%
+  );
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+html.dark .home-claude-btn-secondary.semi-button:hover {
+  border-color: rgba(255, 223, 201, 0.18);
+  background: linear-gradient(
+    140deg,
+    rgba(64, 46, 37, 0.76) 0%,
+    rgba(40, 30, 24, 0.58) 100%
+  );
+}
+
+html.dark .home-claude-cat-silhouette {
+  background: linear-gradient(180deg, #8e6f5d 0%, #755949 52%, #5b4337 100%);
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.34),
+    inset 0 12px 24px rgba(255, 255, 255, 0.06);
+}
+
+html.dark .home-claude-cat-silhouette::before,
+html.dark .home-claude-cat-silhouette::after {
+  background: linear-gradient(180deg, #886957 0%, #6c5243 100%);
+}
+
+html.dark .home-claude-cat-label {
+  background: rgba(33, 25, 21, 0.72);
+  color: #e7cdb7;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 767px) {
+  .home-claude-hero {
+    padding-bottom: 2.5rem;
+  }
+
+  .home-claude-stage {
+    min-height: calc(100vh - 64px - 2.5rem);
+  }
+
+  .home-claude-island {
+    margin-bottom: -4.5rem;
+    border-radius: 1.75rem;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .home-claude-actions {
+    flex-direction: column;
+  }
+
+  .home-claude-action-link,
+  .home-claude-action-link .semi-button,
+  .home-claude-actions > .semi-button {
+    width: 100%;
+  }
+
+  .home-claude-cat-wrap {
+    width: min(100%, 560px);
+  }
+
+  .home-claude-cat-placeholder {
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-claude-btn-primary.semi-button,
+  .home-claude-btn-secondary.semi-button {
+    transition: none;
+  }
+
+  .home-claude-btn-primary.semi-button:hover,
+  .home-claude-btn-secondary.semi-button:hover {
+    transform: none;
+  }
 }
