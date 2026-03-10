@@ -1049,20 +1049,22 @@ html.dark .with-pastel-balls::before {
 .home-claude-stage {
   position: relative;
   z-index: 1;
-  width: min(100%, 980px);
+  width: min(100%, 1120px);
   margin: 0 auto;
   min-height: calc(100vh - 64px - 3rem);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
 }
 
 .home-claude-island {
   position: relative;
   z-index: 2;
-  width: min(100%, 680px);
-  margin-bottom: -7.5rem;
+  flex: 0 1 620px;
+  width: min(100%, 620px);
+  margin-bottom: 0;
   padding: clamp(1.75rem, 4vw, 3rem);
   border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 2rem;
@@ -1074,7 +1076,7 @@ html.dark .with-pastel-balls::before {
   box-shadow:
     0 30px 80px rgba(109, 78, 54, 0.14),
     inset 0 1px 0 rgba(255, 255, 255, 0.72);
-  text-align: center;
+  text-align: left;
   backdrop-filter: blur(24px) saturate(135%);
   -webkit-backdrop-filter: blur(24px) saturate(135%);
 }
@@ -1097,26 +1099,28 @@ html.dark .with-pastel-balls::before {
 .home-claude-title {
   margin-top: 1rem;
   color: #2b2018;
-  font-size: clamp(2.5rem, 5vw, 4.8rem);
-  line-height: 1.02;
-  letter-spacing: -0.05em;
+  font-size: clamp(2.8rem, 5vw, 5.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
   font-weight: 700;
+  text-wrap: balance;
 }
 
 .home-claude-subtitle {
-  width: min(100%, 32rem);
-  margin: 1rem auto 0;
+  width: min(100%, 34rem);
+  margin: 1.125rem 0 0;
   color: #655246;
-  font-size: clamp(1rem, 1.4vw, 1.125rem);
-  line-height: 1.75;
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  line-height: 1.85;
+  text-wrap: pretty;
 }
 
 .home-claude-actions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.875rem;
-  margin-top: 1.75rem;
+  margin-top: 2rem;
 }
 
 .home-claude-action-link {
@@ -1178,7 +1182,8 @@ html.dark .with-pastel-balls::before {
 .home-claude-cat-wrap {
   position: relative;
   z-index: 1;
-  width: min(100%, 820px);
+  flex: 1 1 460px;
+  width: min(100%, 520px);
 }
 
 .home-claude-cat-image,
@@ -1385,17 +1390,20 @@ html.dark .home-claude-cat-label {
   }
 
   .home-claude-stage {
+    flex-direction: column;
     min-height: calc(100vh - 64px - 2.5rem);
   }
 
   .home-claude-island {
-    margin-bottom: -4.5rem;
+    width: 100%;
     border-radius: 1.75rem;
     padding: 1.5rem 1.25rem;
+    text-align: center;
   }
 
   .home-claude-actions {
     flex-direction: column;
+    justify-content: center;
   }
 
   .home-claude-action-link,

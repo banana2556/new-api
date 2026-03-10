@@ -21,15 +21,27 @@ import react from '@vitejs/plugin-react';
 import { defineConfig, transformWithEsbuild } from 'vite';
 import pkg from '@douyinfe/vite-plugin-semi';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { codeInspectorPlugin } from 'code-inspector-plugin';
 const { vitePluginSemi } = pkg;
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
+    alias: [
+      {
+        find: '@douyinfe/semi-ui/dist/css/semi.css',
+        replacement: path.resolve(
+          __dirname,
+          './node_modules/@douyinfe/semi-ui/dist/css/semi.css',
+        ),
+      },
+      {
+        find: '@',
+        replacement: path.resolve(__dirname, './src'),
+      },
+    ],
   },
   plugins: [
     codeInspectorPlugin({
@@ -57,6 +69,7 @@ export default defineConfig({
   ],
   optimizeDeps: {
     force: true,
+    noDiscovery: true,
     esbuildOptions: {
       loader: {
         '.js': 'jsx',
